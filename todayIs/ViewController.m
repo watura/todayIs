@@ -10,7 +10,7 @@
 
 @implementation ViewController
 @synthesize status;
-
+@synthesize formt;
 -(void) switch:(id)sender{
     UILocalNotification *ln = [[UILocalNotification alloc] init];
     
@@ -25,7 +25,7 @@
             NSLocale* locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
             [df setCalendar: cal];
             [df setLocale:locale];
-            [df setDateFormat:@"GGyy年MM月dd日 EEEE"];
+            [df setDateFormat:formt.text];
             // [formatter setDateFormat:@"YYYY年MM月dd日 EEEE"];
             NSString* str = [df stringFromDate:dt];         
             ln.timeZone = [NSTimeZone defaultTimeZone];
@@ -42,6 +42,7 @@
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
     NSUserDefaults *ud =  [NSUserDefaults standardUserDefaults];
+    [ud setObject:formt.text forKey:@"formt"];
     [ud setBool:status.on forKey:@"status"];
 }
 
@@ -59,6 +60,10 @@
     [super viewDidLoad];
     NSUserDefaults *ud =  [NSUserDefaults standardUserDefaults];
     bool st = [ud boolForKey:@"status"];
+    formt.text = [ud stringForKey:@"formt"];
+    if (formt.text == nil) {
+        formt.text = @"GGyy年MM月dd日 EEEE";
+    }
     status.on = st;
     [status addTarget:self action:@selector(switch:)
      forControlEvents:UIControlEventValueChanged];

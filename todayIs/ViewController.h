@@ -13,6 +13,7 @@
 }
 
 @property (strong,nonatomic) IBOutlet UISwitch *status;
+@property (strong,nonatomic) IBOutlet UITextField *formt;
 -(void) switch:(id)sender;
 
 @end
