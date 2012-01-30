@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    IBOutlet UISwitch *status; 
+}
+
+@property (strong,nonatomic) IBOutlet UISwitch *status;
+-(void) switch:(id)sender;
 
 @end

@@ -22,14 +22,14 @@
 		413949BF14D66F4E005665BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		413949C114D66F4E005665BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		413949C314D66F4E005665BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		413949C714D66F4E005665BE /* todayIs-Info.plist */ = {isa = PBXFileReference; path = "todayIs-Info.plist"; sourceTree = "<group>"; };
+		413949C714D66F4E005665BE /* todayIs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "todayIs-Info.plist"; sourceTree = "<group>"; };
 		413949C914D66F4E005665BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		413949CB14D66F4E005665BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		413949CD14D66F4E005665BE /* todayIs-Prefix.pch */ = {isa = PBXFileReference; path = "todayIs-Prefix.pch"; sourceTree = "<group>"; };
-		413949CE14D66F4E005665BE /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		413949CD14D66F4E005665BE /* todayIs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "todayIs-Prefix.pch"; sourceTree = "<group>"; };
+		413949CE14D66F4E005665BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		413949CF14D66F4E005665BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		413949D214D66F4E005665BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		413949D414D66F4E005665BE /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		413949D414D66F4E005665BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		413949D514D66F4E005665BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +195,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -210,6 +211,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -220,6 +222,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -229,6 +232,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -237,10 +241,12 @@
 		413949DA14D66F4E005665BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "todayIs/todayIs-Prefix.pch";
 				INFOPLIST_FILE = "todayIs/todayIs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -248,10 +254,12 @@
 		413949DB14D66F4E005665BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "todayIs/todayIs-Prefix.pch";
 				INFOPLIST_FILE = "todayIs/todayIs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

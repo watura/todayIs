@@ -9,6 +9,42 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize status;
+
+-(void) switch:(id)sender{
+    UILocalNotification *ln = [[UILocalNotification alloc] init];
+    
+    if (status.on){
+        NSDate *dt = [NSDate date];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"YYYY-MM-dd"];
+        dt = [df dateFromString:[df stringFromDate:dt]];
+        for (int i = 0; i< 182; i++){
+            
+            NSCalendar* cal = [[NSCalendar alloc] initWithCalendarIdentifier: NSJapaneseCalendar];
+            NSLocale* locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"];
+            [df setCalendar: cal];
+            [df setLocale:locale];
+            [df setDateFormat:@"GGyy年MM月dd日 EEEE"];
+            // [formatter setDateFormat:@"YYYY年MM月dd日 EEEE"];
+            NSString* str = [df stringFromDate:dt];         
+            ln.timeZone = [NSTimeZone defaultTimeZone];
+            ln.fireDate = dt;
+            ln.alertBody = str;
+            ln.applicationIconBadgeNumber = 0;
+            ln.hasAction = NO;            
+            [[UIApplication sharedApplication] scheduleLocalNotification:ln];
+            dt = [NSDate dateWithTimeInterval:60*60*24 sinceDate:dt];
+            str = [df stringFromDate:dt];
+        }
+        
+    }else{
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+    NSUserDefaults *ud =  [NSUserDefaults standardUserDefaults];
+    [ud setBool:status.on forKey:@"status"];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,6 +57,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *ud =  [NSUserDefaults standardUserDefaults];
+    bool st = [ud boolForKey:@"status"];
+    status.on = st;
+    [status addTarget:self action:@selector(switch:)
+     forControlEvents:UIControlEventValueChanged];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
